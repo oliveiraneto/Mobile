@@ -1,45 +1,36 @@
 // LoginScreen.js
 
-import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
-  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const cadastro = () => {
-    // Implemente a lógica de cadastro aqui
-    alert('Cadastro realizado com sucesso!');
-    navigation.navigate('CadastroConcluido'); // Navega para a tela de cadastro concluído
+  const handleLogin = () => {
+    // Aqui você pode adicionar a lógica de autenticação real.
+    // Se o login for bem-sucedido, navegue para a tela de "Cadastro Feito".
+    navigation.navigate('CadastroFeito');
   }
 
   return (
     <View style={styles.container}>
-      <StatusBar hidden />
-      <Image style={{ width: 300, height: 200 }} source={require('./assets/splash.png')} />
+      <Text style={styles.logo}>Tela de Login</Text>
       <TextInput
-        placeholder='Seu nome...'
-        style={styles.TextInput}
-        onChangeText={text => setNome(text)}
-      />
-      <TextInput
-        placeholder='Seu email...'
-        style={styles.TextInput}
+        style={styles.input}
+        placeholder="Email"
         onChangeText={text => setEmail(text)}
+        value={email}
       />
       <TextInput
-        placeholder='Sua senha...'
-        style={styles.TextInput}
+        style={styles.input}
+        placeholder="Senha"
         onChangeText={text => setSenha(text)}
+        value={senha}
         secureTextEntry
       />
-      <TouchableOpacity
-        style={styles.btcadastro}
-        onPress={() => cadastro()}
-      >
-        <Text style={{ color: 'white', textAlign: 'center' }}>CADASTRAR!</Text>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -48,24 +39,32 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
   },
-  TextInput: {
-    width: '100%',
-    height: 40,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    paddingLeft: 10,
-    marginBottom: 10,
+  logo: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 30,
   },
-  btcadastro: {
-    width: '100%',
+  input: {
+    width: '80%',
     height: 40,
-    backgroundColor: 'green',
-    borderRadius: 30,
-    justifyContent: 'center',
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: 'blue',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
