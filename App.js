@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './LoginScreen';
 import CadastroFeito from './CadastroFeito';
 import PlanetInfo from './PlanetInfo'; // Certifique-se de que isso está importado
+import CameraScreen from './CameraScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="CadastroFeito" component={CadastroFeito} />
         <Stack.Screen name="PlanetInfo" component={PlanetInfo} />
+        <Stack.Screen name="Camera" component={CameraScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

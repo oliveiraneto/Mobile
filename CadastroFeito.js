@@ -1,5 +1,3 @@
-// CadastroFeito.js
-
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
@@ -7,6 +5,11 @@ export default function CadastroFeito({ navigation }) {
   const handleContinuar = () => {
     // Navegar para a tela de Informações dos Planetas quando o botão "Continuar" for pressionado
     navigation.navigate('PlanetInfo');
+  }
+
+  const handleCamera = () => {
+    // Navegar para a tela da câmera quando o botão "Câmera" for pressionado
+    navigation.navigate('Camera');
   }
 
   return (
@@ -17,17 +20,17 @@ export default function CadastroFeito({ navigation }) {
         onPress={() => navigation.navigate('Login')}
       />
       <Button
-        title="Continuar"
+        title="Pesquisar"
         onPress={handleContinuar}
+      />
+      <Button
+        title="Câmera"
+        onPress={handleCamera}
       />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // Estilos aqui
 });
