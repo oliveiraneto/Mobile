@@ -11,7 +11,7 @@ export default function LoginScreen({ navigation }) {
 
   const cadastro = () => {
     // Implemente a lógica de cadastro aqui
-    alert('Cadastro realizado com sucesso!');
+    alert('Cadastro realizado com sucesso!!');
     navigation.navigate('CadastroConcluido'); // Navega para a tela de cadastro concluído
   }
 
