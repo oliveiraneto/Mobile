@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
 
 export default function PlanetInfo() {
   const [searchQuery, setSearchQuery] = useState('');
   const [planetInfo, setPlanetInfo] = useState('');
 
-  // Função para buscar informações sobre o planeta com base na pesquisa
   const searchPlanetInfo = () => {
-    // Verificar o valor de searchQuery e definir planetInfo com base nesse valor
-    if (searchQuery.toLowerCase() === 'planetas') {
-      setPlanetInfo(`Planetas são corpos celestes que orbitam em torno de estrelas, como nosso próprio planeta, a Terra, que orbita o Sol.\nEles não emitem luz própria, mas refletem a luz de suas estrelas-mãe.\nPlanetas variam em tamanho, composição e características. Alguns têm atmosferas, luas e condições adequadas para a vida, enquanto outros são inabitáveis.`);
-    } else if (searchQuery.toLowerCase() === 'sol') {
-      setPlanetInfo(`O Sol é a estrela central do nosso sistema solar e a fonte primária de luz e energia para os planetas que o orbitam.\nÉ uma estrela de tipo espectral G2V, composta principalmente de hidrogênio e hélio, que passa por reações nucleares em seu núcleo, produzindo calor e luz através da fusão nuclear.\nO Sol desempenha um papel fundamental na manutenção da vida na Terra, fornecendo calor e luz para sustentar a vida e o clima do planeta.`);
-    } else if (searchQuery.toLowerCase() === 'estrelas') {
-      setPlanetInfo(`As estrelas são corpos celestes massivos que emitem luz e calor devido a reações nucleares em seus núcleos.\nExistem bilhões de estrelas em nossa galáxia, a Via Láctea, e bilhões de galáxias no universo, cada uma com sua própria coleção de estrelas.\nAs estrelas variam em tamanho, cor e temperatura, e sua evolução pode levar à formação de buracos negros, supernovas e outras estruturas cósmicas.`);
-    } else if (searchQuery.toLowerCase() === 'buracos negros') {
-      setPlanetInfo(`Um buraco negro é uma região do espaço onde a gravidade é tão intensa que nada, nem mesmo a luz, pode escapar de sua atração.\nEles se formam quando uma estrela massiva colapsa sob sua própria gravidade após esgotar seu combustível nuclear.\nBuracos negros vêm em diferentes tamanhos, desde pequenos buracos negros estelares até buracos negros supermassivos encontrados no centro das galáxias.`);
-    } else if (searchQuery.toLowerCase() === 'galáxias') {
-      setPlanetInfo(`Galáxias são vastas estruturas compostas por bilhões ou até trilhões de estrelas, bem como gás, poeira e matéria escura, todas mantidas juntas pela gravidade.\nA Via Láctea é a galáxia em que nosso sistema solar está localizado.\nExistem diferentes tipos de galáxias, incluindo espirais, elípticas e irregulares, cada uma com sua própria organização e características únicas.`);
+    if (searchQuery.toLowerCase() === 'mercurio') {
+      setPlanetInfo(`Mercúrio é o planeta mais próximo do Sol e o menor planeta do nosso sistema solar. É um mundo rochoso e não tem uma atmosfera significativa. As temperaturas em Mercúrio variam muito, com extremos de calor e frio.`);
+    } else if (searchQuery.toLowerCase() === 'venus') {
+      setPlanetInfo(`Vênus é muitas vezes chamado de "gêmeo da Terra" devido às suas semelhanças em tamanho e composição. No entanto, é um planeta extremamente quente devido à sua espessa atmosfera de dióxido de carbono.`);
+    } else if (searchQuery.toLowerCase() === 'terra') {
+      setPlanetInfo(`A Terra é o nosso lar, o único planeta conhecido a sustentar vida. Ela tem uma atmosfera que permite a vida e é caracterizada pela presença de água líquida em sua superfície.`);
+    } else if (searchQuery.toLowerCase() === 'marte') {
+      setPlanetInfo(`Marte, muitas vezes chamado de "Planeta Vermelho", é um planeta rochoso que já teve água líquida em sua superfície. Os cientistas têm estudado Marte em busca de evidências de vida passada ou presente.`);
+    } else if (searchQuery.toLowerCase() === 'jupiter') {
+      setPlanetInfo(`Júpiter é o maior planeta do sistema solar e é conhecido por sua Grande Mancha Vermelha, uma tempestade gigante na sua atmosfera. Ele é um gigante gasoso e não tem uma superfície sólida.`);
     } else {
       setPlanetInfo(`Nenhuma informação encontrada para "${searchQuery}"`);
     }
@@ -25,6 +23,10 @@ export default function PlanetInfo() {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require('./planets.png')} // Substitua pelo caminho real da sua imagem de logo
+        style={styles.logo}
+      />
       <Text>Pesquisa sobre Planetas do Sistema Solar</Text>
       <TextInput
         style={styles.input}
@@ -60,5 +62,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 16,
     textAlign: 'center',
+  },
+  logo: {
+    width: 200, // Ajuste o tamanho da sua logo conforme necessário
+    height: 200, // Ajuste o tamanho da sua logo conforme necessário
+    marginBottom: 20,
   },
 });

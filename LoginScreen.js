@@ -1,20 +1,24 @@
 // LoginScreen.js
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
   const handleLogin = () => {
-    // Aqui você pode adicionar a lógica de autenticação real.
     // Se o login for bem-sucedido, navegue para a tela de "Cadastro Feito".
     navigation.navigate('CadastroFeito');
   }
 
   return (
     <View style={styles.container}>
+      <Image
+      source={require('./astronomy.png')} 
+      style={styles.logoImage}
+    />
       <Text style={styles.logo}>Tela de Login</Text>
       <TextInput
         style={styles.input}
@@ -66,5 +70,10 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
     fontWeight: 'bold',
+  },
+  logoImage: {
+    width: 100, 
+    height: 100, 
+    marginBottom: 20, 
   },
 });

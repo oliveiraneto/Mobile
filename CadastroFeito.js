@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, Image, StyleSheet } from 'react-native';
 
 export default function CadastroFeito({ navigation }) {
   const handleContinuar = () => {
@@ -14,23 +14,44 @@ export default function CadastroFeito({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require('./astronaut.png')} 
+        style={styles.logoImage}
+      />
       <Text>Cadastro realizado com sucesso!</Text>
-      <Button
-        title="Voltar para o Login"
-        onPress={() => navigation.navigate('Login')}
-      />
-      <Button
-        title="Pesquisar"
-        onPress={handleContinuar}
-      />
-      <Button
-        title="Câmera"
-        onPress={handleCamera}
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Voltar para o Login"
+          onPress={() => navigation.navigate('Login')}
+        />
+        <Button
+          title="Pesquisar"
+          onPress={handleContinuar}
+        />
+        <Button
+          title="Câmera"
+          onPress={handleCamera}
+        />
+        
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  // Estilos aqui
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logoImage: {
+    width: 150, 
+    height: 150, 
+    marginBottom: 20,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '80%',
+  },
 });
