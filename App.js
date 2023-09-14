@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './LoginScreen';
 import CadastroFeito from './CadastroFeito';
-import PlanetInfo from './PlanetInfo'; // Certifique-se de que isso está importado
+import PlanetInfo from './PlanetInfo'; 
 import CameraScreen from './CameraScreen';
 
 const Stack = createStackNavigator();

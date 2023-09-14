@@ -24,7 +24,7 @@ export default function PlanetInfo() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('./planets.png')} // Substitua pelo caminho real da sua imagem de logo
+        source={require('./planets.png')} 
         style={styles.logo}
       />
       <Text>Pesquisa sobre Planetas do Sistema Solar</Text>
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   logo: {
-    width: 200, // Ajuste o tamanho da sua logo conforme necessário
-    height: 200, // Ajuste o tamanho da sua logo conforme necessário
+    width: 200, 
+    height: 200, 
     marginBottom: 20,
   },
 });
