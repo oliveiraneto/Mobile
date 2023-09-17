@@ -12,6 +12,11 @@ export default function CadastroFeito({ navigation }) {
     navigation.navigate('Camera');
   }
 
+  const handleLocation = () => {
+    // Navegar para a tela de localização quando o botão "Localização" for pressionado
+    navigation.navigate('LocationScreen');
+  }
+
   return (
     <View style={styles.container}>
       <Image
@@ -20,19 +25,30 @@ export default function CadastroFeito({ navigation }) {
       />
       <Text>Cadastro realizado com sucesso!</Text>
       <View style={styles.buttonContainer}>
-        <Button
-          title="Voltar para o Login"
-          onPress={() => navigation.navigate('Login')}
-        />
-        <Button
-          title="Pesquisar"
-          onPress={handleContinuar}
-        />
-        <Button
-          title="Câmera"
-          onPress={handleCamera}
-        />
-        
+        <View style={styles.button}>
+          <Button
+            title="Voltar para o Login"
+            onPress={() => navigation.navigate('Login')}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Pesquisar"
+            onPress={handleContinuar}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Câmera"
+            onPress={handleCamera}
+          />
+        </View>
+        <View style={styles.button}>
+          <Button
+            title="Localização"
+            onPress={handleLocation}
+          />
+        </View>
       </View>
     </View>
   );
@@ -50,8 +66,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
     width: '80%',
+  },
+  button: {
+    marginBottom: 10,
   },
 });

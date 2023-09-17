@@ -7,6 +7,7 @@ import LoginScreen from './LoginScreen';
 import CadastroFeito from './CadastroFeito';
 import PlanetInfo from './PlanetInfo'; 
 import CameraScreen from './CameraScreen';
+import LocationScreen from './LocationScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ function App() {
         <Stack.Screen name="CadastroFeito" component={CadastroFeito} />
         <Stack.Screen name="PlanetInfo" component={PlanetInfo} />
         <Stack.Screen name="Camera" component={CameraScreen} />
+        <Stack.Screen name="LocationScreen" component={LocationScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
